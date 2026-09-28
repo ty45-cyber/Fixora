@@ -1,8 +1,11 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "standalone",
+  // Tells the Node File Tracer to look for dependencies at the monorepo root
+  outputFileTracingRoot: path.join(__dirname, "../../"),
   poweredByHeader: false,
   async headers() {
     return [{
