@@ -1,11 +1,9 @@
-import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: "standalone",
-  // Tells the Node File Tracer to look for dependencies at the monorepo root
-  outputFileTracingRoot: path.join(__dirname, "../../"),
+  // REMOVED: output: "standalone" 
+  // REMOVED: outputFileTracingRoot (Vercel handles monorepo tracing automatically if Root Directory is correct)
   poweredByHeader: false,
   async headers() {
     return [{
